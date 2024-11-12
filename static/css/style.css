@@ -1,15 +1,133 @@
+@import url('color.css');
+
+body {
+    font-family: "Lucida Console", Monaco, monospace;
+    margin: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-rows: 100px 1fr auto;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+        "header header"
+        "side-panel main-content"
+        "footer footer";
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    width: 100%;
+    background-color: var(--background-color);
+}
+.header-class{
+    border-bottom: 2px solid #3B1C32;
+}
+
 footer {
-    position: fixed; /* Element je pozicioniran u odnosu na viewport */
-    bottom: 0;       /* Postavlja element na dno stranice */
-    left: 0;         /* Poravnava element sa levom ivicom */
-    width: 100%;     /* Širina elementa zauzima 100% širine viewport-a */
-    background-color: #333;
-    color: white;
+    grid-area: footer;
+    width: 100%;
+    background-color: var(--background-color);
     text-align: center;
     padding: 10px;
-    background-color: black;
+}
+
+.footer-class {
+    border-top: 2px solid var(--pr-color);
 }
 
 footer p {
-    color: aliceblue;
+    color: var(--text-color);
+}
+
+/* Side panel stil */
+.side-panel {
+    grid-area: side-panel;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-right: 2px solid var(--pr-color);
+    overflow-y: auto;
+}
+.side-panel2 {
+    padding: 20px;
+}
+/* Glavni sadržaj */
+.main-content {
+    grid-area: main-content;
+    padding: 20px;
+    background-color: var(--background);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /
+    padding: 0;
+    height: 100%;
+}
+
+.logo {
+    border-radius: 80%;
+    height: 80px;
+    padding: 10px;
+    object-fit: contain;
+}
+
+#search-bar {
+    width: 30%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.settings-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Stil unutar side panela */
+.panel-section h3 {
+    border-top: 2px solid var(--pr-color);
+    padding-top: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--text-color2);
+}
+
+.category-list, .popular-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-list li, .popular-list li {
+    margin-bottom: 10px;
+}
+
+.category-list a, .popular-list a {
+    text-decoration: none;
+    color: var(--tr-color);
+    font-weight: 500;
+}
+
+.category-list a:hover, .popular-list a:hover {
+    text-decoration: underline;
 }
