@@ -1,0 +1,15 @@
+footer {
+    position: fixed; /* Element je pozicioniran u odnosu na viewport */
+    bottom: 0;       /* Postavlja element na dno stranice */
+    left: 0;         /* Poravnava element sa levom ivicom */
+    width: 100%;     /* Širina elementa zauzima 100% širine viewport-a */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+}
+
+footer p {
+    color: aliceblue;
+}
