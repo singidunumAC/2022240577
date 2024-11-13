@@ -3,5 +3,5 @@
     <label id="search-bar">
         <input type="text" class="search-bar" placeholder="Search...">
     </label>
-    <button class="settings-button">⚙️ Settings</button>
+    <button class="settings-button">Log in</button>
 </div>
