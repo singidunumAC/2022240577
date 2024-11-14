@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['email'])) {
+if (!isset($_SESSION['userId'])) {
     ?>
     <div class="header-container">
         <img src="../static/img/logo.jpg" alt="logo" class="logo"/>

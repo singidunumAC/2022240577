@@ -3,23 +3,33 @@ session_start();
 require_once '../core/connect.php';
 require_once '../models/userModel.php';
 
+
+class AuthController {
+    public function logout() {
+        session_unset();
+        session_destroy();
+        header("Location: ../public/index.php");
+        exit;
+    }
+}
+
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+    $authController = new AuthController();
+    $authController->logout();
+}
+
 function loginUser($pdo, $input, $password)
 {
     $userId = findUserIdByUsernameOrId($pdo, $input);
 
-    $sql = "SELECT password FROM users WHERE id = :input";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':input', $userId, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $pass = $stmt->fetch(PDO::FETCH_ASSOC);
+    $pass = findUserPassword($pdo, $userId);
 
     if ($pass) {
         //if (password_verify($password, $pass['password']))
-        if ($password == $pass['password']) {
+        if ($password == $pass) {
             echo 'Uspeo si!<br>';
             $_SESSION['userId'] = $userId;
-            header("Location: ../public/testScreen.php");
+            header("Location: ../public/index.php");
             exit;
         } else {
             echo 'Netačna lozinka!<br>';

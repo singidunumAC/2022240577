@@ -1,5 +1,6 @@
 <?php
-
+require '../core/connect.php';
+session_start();
 ?>
 <head>
     <title></title>

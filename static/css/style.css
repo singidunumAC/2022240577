@@ -50,7 +50,6 @@ footer p {
     color: var(--text-color);
 }
 
-/* Side panel stil */
 .side-panel {
     grid-area: side-panel;
     padding: 20px;
@@ -61,7 +60,7 @@ footer p {
 .side-panel2 {
     padding: 20px;
 }
-/* Glavni sadržaj */
+
 .main-content {
     grid-area: main-content;
     padding: 20px;
@@ -105,11 +104,11 @@ footer p {
     border-radius: 50px;
     color: var(--text-color);
     text-align: center;
-    text-decoration: none; /* Uklanja podvlačenje linka */
+    text-decoration: none; /* Uklanja podvlacenje linka */
 
 }
 
-/* Stil unutar side panela */
+
 .panel-section h3 {
     border-top: 2px solid var(--pr-color);
     padding-top: 5px;
@@ -138,17 +137,21 @@ footer p {
     text-decoration: underline;
 }
 
+
 .login-form {
     background-color: var(--background-color);
     display: flex;
     justify-content: center; /* Horizontalno centriranje */
     align-items: center;     /* Vertikalno centriranje */
     height: 100vh;           /* Visina ekrana */
-    margin: 0;
+
 }
 
 .login-box {
-
+    display: flex;
+    justify-content: center; /* Horizontalno centriranje */
+    flex-direction: column;
+    align-items: center;
     width: 500px;
     height: 600px;
     background-color: var(--background);
@@ -157,4 +160,50 @@ footer p {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     border-radius: 50px;
+
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form .login {
+    background-color: var(--pr-color);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.name, .password, .login {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 5px solid var(--pr-color);
+}
+
+.login-h2 {
+    color: var(--text-color2);
+}
+
+.text {
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+.login-singup-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pr-color);
+    height: 25px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.logIn-singUp-button {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    text-decoration: none;
 }

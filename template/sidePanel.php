@@ -2,8 +2,8 @@
     <div class="side-panel2">
         <div class="panel-section">
             <ul class="category-list">
-                <li><a href="../public/testScreen.php">Home</a></li>
-                <li><a href="../public/index.php">Explore</a></li>
+                <li><a href="../public/index.php">Home</a></li>
+                <li><a href="../public/testScreen.php">Explore</a></li>
 
             </ul>
         </div>
@@ -31,16 +31,13 @@
         <div class="panel-section">
             <h3>Popular</h3>
             <ul class="popular-list">
-                <li><a href="#">Top post 1</a></li>
-                <li><a href="#">Top post 2</a></li>
-                <li><a href="#">Top post 3</a></li>
-                <li><a href="#">Top post 4</a></li>
-                <li><a href="#">Top post 5</a></li>
-                <li><a href="#">Top post 6</a></li>
-                <li><a href="#">Top post 7</a></li>
-                <li><a href="#">Top post 8</a></li>
+                <li><a href="#">Top post</a></li>
+
             </ul>
         </div>
+        <?php
+        if (isset($_SESSION['userId'])) {
+        ?>
         <div class="panel-section">
             <h3>-------</h3>
             <ul class="popular-list">
@@ -49,7 +46,22 @@
                 <li><a href="#">Setings</a></li>
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Frends</a></li>
+                <li><a href="../controllers/authController.php?action=logout">Sign out</a></li>
             </ul>
+            <?php
+            } else {
+            ?>
+            <div class="panel-section">
+                <h3>-------</h3>
+                <ul class="popular-list">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Setings</a></li>
+                </ul>
+                <?php
+                }
+                ?>
+
         </div>
     </div>
 </sidePanel>
