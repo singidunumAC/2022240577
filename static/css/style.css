@@ -65,7 +65,7 @@ footer p {
 .main-content {
     grid-area: main-content;
     padding: 20px;
-    background-color: var(--background);
+
 }
 
 .header-container {
@@ -79,7 +79,7 @@ footer p {
 .logo {
     border-radius: 80%;
     height: 80px;
-    padding: 10px;
+    padding: 5px;
     object-fit: contain;
 }
 
@@ -96,11 +96,16 @@ footer p {
     background-color: var(--se-color);
 }
 
-.settings-button {
+.login-button {
     background-color: var(--se-color);
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
-    padding-right: 10px;
+    padding: 10px;
+    border: 2px solid var(--pr-color);
+    border-radius: 50px;
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none; /* Uklanja podvlačenje linka */
 
 }
 
@@ -131,4 +136,25 @@ footer p {
 
 .category-list a:hover, .popular-list a:hover {
     text-decoration: underline;
+}
+
+.login-form {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center; /* Horizontalno centriranje */
+    align-items: center;     /* Vertikalno centriranje */
+    height: 100vh;           /* Visina ekrana */
+    margin: 0;
+}
+
+.login-box {
+
+    width: 500px;
+    height: 600px;
+    background-color: var(--background);
+    padding: 20px;
+    border: 2px solid var(--pr-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 50px;
 }

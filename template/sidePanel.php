@@ -3,7 +3,7 @@
         <div class="panel-section">
             <ul class="category-list">
                 <li><a href="../public/testScreen.php">Home</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="../public/index.php">Explore</a></li>
 
             </ul>
         </div>
