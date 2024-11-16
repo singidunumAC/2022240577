@@ -5,9 +5,11 @@ require '../core/connect.php';
 require '../controllers/authController.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $input = $_POST['name'];
-    $password = $_POST['password'];
+    $name = $_POST['name'];
+    $password1 = $_POST['password'];
+    $password2 = $_POST['password2'];
 
+    addUser($pdo, $name, $password1, $password2);
 }
 ?>
 <head>
@@ -15,21 +17,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/colors.css">
 </head>
+
 <body class="login-form">
 <div class="login-box">
     <div id="login-for">
-        <form method="post" action="login.php">
+        <form method="post" action="singup.php">
             <div class="text">
                 <h2 class="login-h2">Sing up</h2>
             </div>
             <div class="form-group">
-                <input class="name" name="name" placeholder="Name or ID">
-            </div>
-            <div class="form-group">
-                <a class="logIn-singUp-button" href="login.php">generate id</a>
+                <input id="nameOrId" class="name" name="name" placeholder="Name(opcional)">
             </div>
             <div class="form-group">
                 <input type="password" class="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="password" class="password" name="password2" placeholder="Confirm Password">
             </div>
             <div class="form-group">
                 <input type="submit" value="Sing Up" class="login">

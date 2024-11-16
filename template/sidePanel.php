@@ -41,11 +41,12 @@
         <div class="panel-section">
             <h3>-------</h3>
             <ul class="popular-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Setings</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="../public/index.php?content=about">About</a></li>
+                <li><a href="../public/index.php?content=post">Post</a></li>
+                <li><a href="../public/index.php?content=settings">Settings</a></li>
+                <li><a href="../public/index.php?content=account">Account</a></li>
                 <li><a href="#">Frends</a></li>
+                <li><a href="#">Help</a></li>
                 <li><a href="../controllers/authController.php?action=logout">Sign out</a></li>
             </ul>
             <?php
@@ -56,7 +57,7 @@
                 <ul class="popular-list">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Help</a></li>
-                    <li><a href="#">Setings</a></li>
+                    <li><a href="../public/index.php?content=contact">Setings</a></li>
                 </ul>
                 <?php
                 }

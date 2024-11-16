@@ -129,7 +129,7 @@ footer p {
 
 .category-list a, .popular-list a {
     text-decoration: none;
-    color: var(--tr-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -206,4 +206,49 @@ form .login {
     color: var(--text-color);
     font-size: 0.8rem;
     text-decoration: none;
+}
+.main-content{
+    background-color: var(--background-color);
+}
+.settings-container {
+
+}
+
+.card {
+    padding: 20px;
+    height: 300px;
+    width: 1200px;
+    border: 2px solid var(--pr-color);
+    border-radius: 10px;
+}
+
+
+.cardVotes {
+    height: 40px;
+    width: 100px; /* Povećajte širinu da ima mesta za broj */
+    border: 2px solid var(--pr-color);
+    display: flex; /* Aktivira flexbox */
+    align-items: center; /* Vertikalno centriranje */
+    justify-content: space-between; /* Dugmad se guraju levo i desno */
+    padding: 0 10px; /* Dodaje razmak unutar kontejnera */
+    box-sizing: border-box; /* Uključuje padding u ukupnu širinu */
+    border-radius: 10px;
+}
+
+.upVote, .downVote {
+    height: 20px;
+    width: 40px;
+    text-align: center; /* Centriranje sadržaja dugmeta */
+    background-color: var(--pr-color); /* Dodajte boju dugmetu */
+    border: 1px solid var(--se-color); /* Oivičenje */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    cursor: pointer; /* Kursor pri prelasku */
+}
+
+.voteCount {
+    padding: 5px;
+    font-size: 1.2rem; /* Veći broj za bolju vidljivost */
+    text-align: center; /* Centriran tekst */
+    flex-shrink: 0; /* Sprečava smanjivanje broja */
+    color: var(--text-color); /* Boja teksta */
 }
