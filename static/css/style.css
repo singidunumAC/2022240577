@@ -31,7 +31,7 @@ header {
     background-color: var(--background-color);
 }
 .header-class{
-    border-bottom: 2px solid #3B1C32;
+    border-bottom: 2px solid var(--pr-color);
 }
 
 footer {
@@ -92,7 +92,8 @@ footer p {
     border: 2px solid var(--pr-color);
     border-radius: 50px;
     font-size: 16px;
-    background-color: var(--se-color);
+    color: var(--text-color);
+    background-color: var(--background);
 }
 
 .login-button {
@@ -218,37 +219,99 @@ form .login {
     padding: 20px;
     height: 300px;
     width: 1200px;
-    border: 2px solid var(--pr-color);
-    border-radius: 10px;
-}
+    border-top: 2px solid var(--pr-color);
 
+}
+.card-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.card-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
 
 .cardVotes {
     height: 40px;
-    width: 100px; /* Povećajte širinu da ima mesta za broj */
+    width: 100px;
     border: 2px solid var(--pr-color);
-    display: flex; /* Aktivira flexbox */
-    align-items: center; /* Vertikalno centriranje */
-    justify-content: space-between; /* Dugmad se guraju levo i desno */
-    padding: 0 10px; /* Dodaje razmak unutar kontejnera */
-    box-sizing: border-box; /* Uključuje padding u ukupnu širinu */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
     border-radius: 10px;
 }
 
 .upVote, .downVote {
     height: 20px;
     width: 40px;
-    text-align: center; /* Centriranje sadržaja dugmeta */
-    background-color: var(--pr-color); /* Dodajte boju dugmetu */
-    border: 1px solid var(--se-color); /* Oivičenje */
-    border-radius: 5px; /* Zaobljeni uglovi */
-    cursor: pointer; /* Kursor pri prelasku */
+    text-align: center;
+    background-color: var(--pr-color);
+    border: 1px solid var(--se-color);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .voteCount {
     padding: 5px;
-    font-size: 1.2rem; /* Veći broj za bolju vidljivost */
-    text-align: center; /* Centriran tekst */
-    flex-shrink: 0; /* Sprečava smanjivanje broja */
-    color: var(--text-color); /* Boja teksta */
+    font-size: 1.2rem;
+    text-align: center;
+    flex-shrink: 0;
+    color: var(--text-color);
+}
+
+.card-footer {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+
+/*  newPost   */
+
+.new-post-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 2px solid var(--pr-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+}
+
+.new-post-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.new-post-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.new-post-form input,
+.new-post-form textarea,
+.new-post-form button {
+    resize: none; 
+    overflow: auto;
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--se-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background);
+}
+
+.new-post-form button {
+    background-color: var(--pr-color);
+    color: var(--text-color2);
+    cursor: pointer;
+}
+
+.new-post-form button:hover {
+    background-color: var(--pr-color);
 }

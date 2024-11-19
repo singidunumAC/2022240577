@@ -22,9 +22,14 @@ function addComment($pdo, $postId, $author, $body) {
 }
 
 function newPost($pdo, $title, $body, $author) {
-    $sql = "INSERT INTO posts (title, body) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO post (name, body, autor) VALUES (?, ?, ?)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$title, $body, $author]);
+
+    if ($stmt->execute([$title, $body, $author])) {
+        echo "Post uspešno dodat!";
+    } else {
+        echo "Greška pri dodavanju posta.";
+    }
 }
 
 function deletePost($pdo, $id) {
@@ -38,4 +43,10 @@ function deleteComment($pdo, $id) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
 
+}
+function getAllPosts($pdo) {
+    $sql = "SELECT * FROM post ORDER BY id DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
