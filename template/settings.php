@@ -2,6 +2,7 @@
 global $pdo;
 require '../core/connect.php';
 require '../models/userModel.php';
+require '../models/blogModel.php';
 session_start();
 
 ?>
@@ -17,4 +18,15 @@ if (isset($_SESSION['userId'])) {
     echo 'Korisnik nije prijavljen.';
 }
 require '../template/newPost.php';
+
 ?>
+<h1> My posts </h1>
+<?php
+$posts = getPost($pdo, $userId);
+
+foreach ($posts as $post) {
+    require 'card.php';
+}
+?>
+
+

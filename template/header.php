@@ -16,7 +16,7 @@ if (!isset($_SESSION['userId'])) {
         <label id="search-bar">
             <input type="text" class="search-bar" placeholder="Search...">
         </label>
-        <a></a>
+        <a href="#" class="login-button">new post</a>
     </div>
     <?php
 }

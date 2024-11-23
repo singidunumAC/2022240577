@@ -209,6 +209,7 @@ form .login {
     text-decoration: none;
 }
 .main-content{
+    overflow-y: auto;
     background-color: var(--background-color);
 }
 .settings-container {
@@ -216,6 +217,7 @@ form .login {
 }
 
 .card {
+    background-color: var(--background-color);
     padding: 20px;
     height: 300px;
     width: 1200px;

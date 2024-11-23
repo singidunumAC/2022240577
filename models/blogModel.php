@@ -1,15 +1,9 @@
 <?php
-function getPost($pdo, $id) {
-    $sql = "SELECT * FROM post WHERE id = :id";
+function getPost($pdo, $userId) {
+    $sql = "SELECT * FROM post WHERE autor = :autor";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['id' => $id]);
-    $post = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($post) {
-        return $post;
-    } else {
-        return null;
-    }
+    $stmt->execute(['autor' => $userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 function addComment($pdo, $postId, $author, $body) {
     $sql = "INSERT INTO comments (post_id, author, body) VALUES (:post_id, :author, :body)";

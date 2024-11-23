@@ -11,23 +11,19 @@ session_start();
 <body>
 <div class="grid-container">
 
-    <!-- Header -->
     <header class="header-class">
         <?php require '../template/header.php'; ?>
     </header>
 
-    <!-- Side Panel -->
     <aside class="side-panel">
         <?php require '../template/sidePanel.php'; ?>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
         <?php
         if (isset($_GET['content'])) {
             $content = $_GET['content'];
 
-            // Dinamički uključite odgovarajući template
             switch ($content) {
                 case 'settings':
                     require '../template/settings.php';
@@ -45,16 +41,10 @@ session_start();
                     echo 'Stranica nije pronađena.';
             }
         }else {
-            // Podrazumevani sadržaj
             require '../template/contentMain.php';
         }
         ?>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer-class">
-        <?php require '../template/footer.php'; ?>
-    </footer>
 
 </div>
 </body>
