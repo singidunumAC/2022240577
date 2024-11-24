@@ -142,15 +142,15 @@ footer p {
 .login-form {
     background-color: var(--background-color);
     display: flex;
-    justify-content: center; /* Horizontalno centriranje */
-    align-items: center;     /* Vertikalno centriranje */
-    height: 100vh;           /* Visina ekrana */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
 }
 
 .login-box {
     display: flex;
-    justify-content: center; /* Horizontalno centriranje */
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 500px;
@@ -224,9 +224,11 @@ form .login {
     border-top: 2px solid var(--pr-color);
 
 }
-.card-title {
+.card-title a {
     font-size: 1.5rem;
     color: var(--text-color);
+    cursor: pointer;
+    text-decoration: none;
 }
 .card-text {
     font-size: 0.9rem;
@@ -235,19 +237,19 @@ form .login {
 
 .cardVotes {
     height: 40px;
-    width: 100px;
+    width: 120px;
     border: 2px solid var(--pr-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 3px;
     box-sizing: border-box;
     border-radius: 10px;
 }
 
 .upVote, .downVote {
     height: 20px;
-    width: 40px;
+    width: 30px;
     text-align: center;
     background-color: var(--pr-color);
     border: 1px solid var(--se-color);
@@ -257,6 +259,7 @@ form .login {
 
 .voteCount {
     padding: 5px;
+    width: 60px;
     font-size: 1.2rem;
     text-align: center;
     flex-shrink: 0;
@@ -266,10 +269,33 @@ form .login {
 .card-footer {
     display: flex;
     text-align: center;
-    justify-content: space-between;
     padding-top: 20px;
+    gap: 10px;
 }
 
+.autor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    border: 2px solid var(--pr-color);
+    padding: 0 20px 0 20px ;
+    text-align: center;
+    border: 2px solid var(--pr-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.coments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--pr-color);
+    padding: 0 20px 0 20px ;
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 10px;
+}
 
 /*  newPost   */
 
@@ -316,4 +342,22 @@ form .login {
 
 .new-post-form button:hover {
     background-color: var(--pr-color);
+}
+
+
+/*  POST  */
+
+.postPage {
+
+}
+
+.postTitle {
+    color: var(--text-color);
+    padding: 10px 0 20px 50px ;
+    font-size: 2rem;
+}
+
+.postText {
+    color: var(--text-color);
+    padding: 0 20px 0 20px;
 }

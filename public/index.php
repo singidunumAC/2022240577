@@ -25,14 +25,14 @@ session_start();
             $content = $_GET['content'];
 
             switch ($content) {
-                case 'settings':
-                    require '../template/settings.php';
+                case 'account':
+                    require '../template/account.php';
                     break;
                 case 'about':
                     require '../template/about.html';
                     break;
-                case 'account':
-                    require '../template/account.php';
+                case 'newPost':
+                    require '../template/newPost.php';
                     break;
                 case 'post':
                     require '../template/post.php';

@@ -5,7 +5,9 @@ if (isset($post)) {
 ?>
 <div class="card">
     <h3 class="card-title">
-        <?= htmlspecialchars($post['name']); ?>
+        <a href="../public/index.php?content=post&id=<?= urlencode($post['id']); ?>">
+            <?= htmlspecialchars($post['name']); ?>
+        </a>
     </h3>
     <p class="card-text">
         <?= nl2br(htmlspecialchars($post['body'])); ?>
@@ -23,10 +25,7 @@ if (isset($post)) {
             </button>
         </div>
         <div class="coments">
-
-        </div>
-        <div>
-
+            <p>Coments</p>
         </div>
         <div class="autor">
             Autor: <?= htmlspecialchars($post['autor']); ?>

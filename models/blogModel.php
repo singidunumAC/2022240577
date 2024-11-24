@@ -44,3 +44,9 @@ function getAllPosts($pdo) {
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getPostById($pdo, $Id) {
+    $sql = "SELECT * FROM post WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $Id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);}

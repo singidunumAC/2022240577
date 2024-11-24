@@ -42,7 +42,6 @@
             <h3>-------</h3>
             <ul class="popular-list">
                 <li><a href="../public/index.php?content=about">About</a></li>
-                <li><a href="../public/index.php?content=settings">Settings</a></li>
                 <li><a href="../public/index.php?content=account">Account</a></li>
                 <li><a href="#">Frends</a></li>
                 <li><a href="#">Help</a></li>
