@@ -62,22 +62,58 @@ function getCommentForPost($pdo, $postId) {
     $stmt->execute(['postId' => $postId]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-function updateVote($pdo, $commentId, $voteType, $userId)
+function updateVote($pdo, $id, $voteType, $userId)
 {
     if (!isset($_SESSION['voted_comments'])) {
         $_SESSION['voted_comments'] = [];
     }
 
-    if (in_array($commentId, $_SESSION['voted_comments'])) {
+    if (in_array($id, $_SESSION['voted_comments'])) {
         exit;
     }
 
     $column = ($voteType === 'up') ? 'up' : 'down';
     $sql = "UPDATE comments SET $column = $column + 1 WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['id' => $commentId]);
+    $stmt->execute(['id' => $id]);
 
-    $_SESSION['voted_comments'][] = $commentId;
+    $_SESSION['voted_comments'][] = $id;
 
     return "Vaš glas je uspešno zabeležen.";
+}
+
+function getCommentCountForPost($pdo, $postId) {
+    $sql = "SELECT COUNT(*) FROM comments WHERE post_id = :postId";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['postId' => $postId]);
+    return (int)$stmt->fetchColumn();
+}
+
+
+function updatePostVote($pdo, $postId, $voteType, $userId)
+{
+    if (!isset($_SESSION['voted_posts'])) {
+        $_SESSION['voted_posts'] = [];
+    }
+
+    if (in_array($postId, $_SESSION['voted_posts'])) {
+        exit;
+    }
+
+    $column = ($voteType === 'up') ? 'upVote' : 'downVote';
+
+    $sql = "UPDATE post SET $column = $column + 1 WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $postId]);
+
+    $_SESSION['voted_posts'][] = $postId;
+
+    return "Vaš glas za post je uspešno zabeležen.";
+}
+
+function getCommentsForUser($pdo, $author) {
+    $sql = "SELECT * FROM comments WHERE autor = :autor";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['autor' => $author]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

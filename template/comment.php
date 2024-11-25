@@ -30,7 +30,9 @@ $countCom = $comment['up'] - $comment['down'];
                         <?= htmlspecialchars($comment['up']); ?>
                     </button>
                 </form>
-                <div class="voteCount"><?= htmlspecialchars($comment['up'] - $comment['down']); ?></div>
+                <div class="voteCount">
+                    <?= htmlspecialchars($comment['up'] - $comment['down']); ?>
+                </div>
                 <form action="../controllers/voteController.php" method="post" style="display: inline;">
                     <input type="hidden" name="commentId" value="<?= $comment['id']; ?>">
                     <input type="hidden" name="voteType" value="down">

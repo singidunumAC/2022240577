@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = $_POST['comment'];
     $postId = $_GET['id'];
     addComment($pdo, $postId, $userId, $comment);
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;
 }
 ?>
 <div class="postPage">
@@ -33,18 +35,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
     <div class="card-footer">
         <div class="cardVotes">
-            <button class="upVote">
-                <?= htmlspecialchars($post['upVote']); ?>
-            </button>
+            <form method="post" action="../controllers/voteControllerPost.php">
+                <input type="hidden" name="post_id" value="<?= htmlspecialchars($post['id']); ?>">
+                <input type="hidden" name="vote_type" value="up">
+                <button type="submit" class="upVote">
+                    <?= htmlspecialchars($post['upVote']); ?>
+                </button>
+            </form>
             <div class="voteCount">
                 <?= htmlspecialchars($count); ?>
             </div>
-            <button class="downVote">
-                <?= htmlspecialchars($post['downVote']); ?>
-            </button>
+            <form method="post" action="../controllers/voteControllerPost.php">
+                <input type="hidden" name="post_id" value="<?= htmlspecialchars($post['id']); ?>">
+                <input type="hidden" name="vote_type" value="down">
+                <button type="submit" class="downVote">
+                    <?= htmlspecialchars($post['downVote']); ?>
+                </button>
+            </form>
         </div>
         <div class="coments">
-            <p>Coments</p>
+            <p><?= htmlspecialchars(getCommentCountForPost($pdo, $post['id'])); ?> Coments</p>
         </div>
         <div class="autor">
             Autor: <?= htmlspecialchars($post['autor']); ?>
@@ -55,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post">
         <label for="comment"></label>
         <input class="addComment" type="text" id="comment" name="comment" placeholder="Add a comment" required>
-        <button type="submit">Add Comment</button>
     </form>
 </div>
 

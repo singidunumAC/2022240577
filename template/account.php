@@ -4,21 +4,23 @@ require '../core/connect.php';
 require '../models/userModel.php';
 require '../models/blogModel.php';
 session_start();
-
-?>
-<div class="settings-container">
-    <h1>Settings</h1>
-</div>
-<?php
 if (isset($_SESSION['userId'])) {
     $userId = $_SESSION['userId'];
-    echo 'ID korisnika: ' . $userId, '<br>';
-    echo 'Ime korisnika: ', userinfo($pdo, $userId);
-} else {
-    echo 'Korisnik nije prijavljen.';
+    $name = userinfo($pdo, $userId);
+
 }
 ?>
-<h1> My posts </h1>
+<div class="settings-container">
+    <h2>Settings</h2>
+    <p>
+        Id : <?= htmlspecialchars($userId); ?>
+    </p>
+    <p>
+        Name : <?= htmlspecialchars($name); ?>
+    </p>
+</div>
+
+<h2> My posts </h2>
 <?php
 $posts = getPost($pdo, $userId);
 

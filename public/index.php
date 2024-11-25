@@ -28,6 +28,12 @@ session_start();
                 case 'account':
                     require '../template/account.php';
                     break;
+                case 'frends':
+                    require '../core/frends.php';
+                    break;
+                case 'help':
+                    require '../template/help.php';
+                    break;
                 case 'about':
                     require '../template/about.html';
                     break;

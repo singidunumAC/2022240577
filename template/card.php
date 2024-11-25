@@ -2,6 +2,9 @@
 if (isset($post)) {
     $count = $post['upVote'] - $post['downVote'];
 }
+$postId = $post['id'];
+
+$commentCount = getCommentCountForPost($pdo, $postId);
 ?>
 <div class="card">
     <h3 class="card-title">
@@ -14,18 +17,26 @@ if (isset($post)) {
     </p>
     <div class="card-footer">
         <div class="cardVotes">
-            <button class="upVote">
-                <?= htmlspecialchars($post['upVote']); ?>
-            </button>
+            <form method="post" action="../controllers/voteControllerPost.php">
+                <input type="hidden" name="post_id" value="<?= htmlspecialchars($post['id']); ?>">
+                <input type="hidden" name="vote_type" value="up">
+                <button type="submit" class="upVote">
+                    <?= htmlspecialchars($post['upVote']); ?>
+                </button>
+            </form>
             <div class="voteCount">
                 <?= htmlspecialchars($count); ?>
             </div>
-            <button class="downVote">
-                <?= htmlspecialchars($post['downVote']); ?>
-            </button>
+            <form method="post" action="../controllers/voteControllerPost.php">
+                <input type="hidden" name="post_id" value="<?= htmlspecialchars($post['id']); ?>">
+                <input type="hidden" name="vote_type" value="down">
+                <button type="submit" class="downVote">
+                    <?= htmlspecialchars($post['downVote']); ?>
+                </button>
+            </form>
         </div>
         <div class="coments">
-            <p>Coments</p>
+            <p><?= htmlspecialchars(getCommentCountForPost($pdo, $post['id'])); ?> Coments</p>
         </div>
         <div class="autor">
             Autor: <?= htmlspecialchars($post['autor']); ?>

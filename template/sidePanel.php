@@ -43,8 +43,8 @@
             <ul class="popular-list">
                 <li><a href="../public/index.php?content=about">About</a></li>
                 <li><a href="../public/index.php?content=account">Account</a></li>
-                <li><a href="#">Frends</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="../public/index.php?content=frends">Friends</a></li>
+                <li><a href="../public/index.php?content=help">Help</a></li>
                 <li><a href="../controllers/authController.php?action=logout">Sign out</a></li>
             </ul>
             <?php
@@ -53,8 +53,8 @@
             <div class="panel-section">
                 <h3>-------</h3>
                 <ul class="popular-list">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="../public/index.php?content=account">Account</a></li>
+                    <li><a href="../public/index.php?content=help">Help</a></li>
                     <li><a href="../public/index.php?content=contact">Setings</a></li>
                 </ul>
                 <?php
@@ -63,6 +63,6 @@
 
         </div>
     </div>
-        <p>Copyright &copy trX4xxz All Rights Reserved.</p>
+        <h7>Copyright &copy trX4xxz All Rights Reserved.</h7>
 
 </sidePanel>
