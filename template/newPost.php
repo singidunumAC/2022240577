@@ -1,8 +1,6 @@
 <?php
 global $pdo;
-require '../core/connect.php';
-require '../controllers/blogControler.php';
-session_start();
+require '../controllers/blogController.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];

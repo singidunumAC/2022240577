@@ -65,12 +65,11 @@ function addUserToBase($pdo, $input, $pass){
     $password = $pass;
 
 
-    // Pripremljen SQL upit
     $sql = "INSERT INTO users (`id`, `name`, `password`) VALUES (?, ?, ?)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id, $name, $password]);
 
-    echo "Korisnik uspešno dodat: ID = $id, Name = $name";
+    echo "korisnik dodat: ID = $id, Name = $name";
     $_SESSION['userId'] = $id;
     header("Location: ../public/index.php");
 }

@@ -8,11 +8,15 @@ function getPost($pdo, $userId) {
 function addComment($pdo, $postId, $author, $body) {
     $sql = "INSERT INTO comments (post_id, author, body) VALUES (:post_id, :author, :body)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([
+    if ($stmt->execute([
         'post_id' => $postId,
         'author' => $author,
         'body' => $body,
-    ]);
+    ])){
+        echo 'Comment added';
+    }else {
+        echo "Something went wrong";
+    }
 }
 
 function newPost($pdo, $title, $body, $author) {
@@ -45,8 +49,35 @@ function getAllPosts($pdo) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getPostById($pdo, $Id) {
+function getPostByid($pdo, $Id) {
     $sql = "SELECT * FROM post WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $Id]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);}
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getCommentForPost($pdo, $postId) {
+    $sql = "SELECT * FROM comments WHERE post_id = :postId";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['postId' => $postId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function updateVote($pdo, $commentId, $voteType, $userId)
+{
+    if (!isset($_SESSION['voted_comments'])) {
+        $_SESSION['voted_comments'] = [];
+    }
+
+    if (in_array($commentId, $_SESSION['voted_comments'])) {
+        exit;
+    }
+
+    $column = ($voteType === 'up') ? 'up' : 'down';
+    $sql = "UPDATE comments SET $column = $column + 1 WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $commentId]);
+
+    $_SESSION['voted_comments'][] = $commentId;
+
+    return "Vaš glas je uspešno zabeležen.";
+}

@@ -9,8 +9,3 @@ function addNewPost($pdo, $name, $body) {
     newPost($pdo, $name, $body, $userId);
 
 }
-
-function getPostById($pdo, $id) {
-    getPost($pdo, $id);
-
-}

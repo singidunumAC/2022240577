@@ -348,7 +348,8 @@ form .login {
 /*  POST  */
 
 .postPage {
-
+    border-bottom: 2px solid var(--pr-color);
+    padding-bottom: 10px;
 }
 
 .postTitle {
@@ -359,5 +360,56 @@ form .login {
 
 .postText {
     color: var(--text-color);
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
+}
+
+
+.commentBox {
+    height: auto;
+    width: 600px;
+    border-top: 2px solid var(--pr-color);
+    padding-top: 20px;
+}
+
+.cmInfo {
+    display: flex;
+    gap: 10px;
+}
+
+.addComment-{
+    padding: 20px;
+}
+
+.addComment {
+    width: 50%;
+    height: 35px;
+    padding: 5px;
+    border: 2px solid var(--pr-color);
+    border-radius: 50px;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--background);
+}
+
+.commentVotes {
+    padding: 10px;
+}
+
+.cardVotesCom {
+    height: 40px;
+    width: 150px;
+    border: 2px solid var(--pr-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.commentBox h4, p {
+    color: var(--text-color);
+}
+.commentBody {
+    padding-top: 20px;
 }
