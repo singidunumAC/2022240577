@@ -43,6 +43,12 @@ session_start();
                 case 'post':
                     require '../template/post.php';
                     break;
+                case 'profil':
+                    require '../core/pofil.php';
+                    break;
+                case 'category':
+                    require '../core/categoryView.php';
+                    break;
                 default:
                     echo 'Stranica nije pronađena.';
             }

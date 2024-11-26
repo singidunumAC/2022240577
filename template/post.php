@@ -56,8 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="coments">
             <p><?= htmlspecialchars(getCommentCountForPost($pdo, $post['id'])); ?> Coments</p>
         </div>
-        <div class="autor">
-            Autor: <?= htmlspecialchars($post['autor']); ?>
+        <div class="autorT">
+            <a href="../public/index.php?content=profil&id=<?= urlencode($post['autor']); ?>">
+                Autor: <?= htmlspecialchars($post['autor']); ?>
+            </a>
         </div>
     </div>
 </div>

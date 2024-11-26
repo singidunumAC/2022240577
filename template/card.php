@@ -38,8 +38,15 @@ $commentCount = getCommentCountForPost($pdo, $postId);
         <div class="coments">
             <p><?= htmlspecialchars(getCommentCountForPost($pdo, $post['id'])); ?> Coments</p>
         </div>
-        <div class="autor">
-            Autor: <?= htmlspecialchars($post['autor']); ?>
+        <div class="autorT">
+            <a href="../public/index.php?content=profil&id=<?= urlencode($post['autor']); ?>">
+                Autor: <?= htmlspecialchars($post['autor']); ?>
+            </a>
+        </div>
+        <div class="autorT">
+            <a href="../public/index.php?content=">
+                Category: <?= htmlspecialchars($post['category']); ?>
+            </a>
         </div>
     </div>
 </div>

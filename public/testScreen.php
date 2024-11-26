@@ -1,11 +1,7 @@
 <?php
 require '../core/connect.php';
 session_start();
-if (isset($_SESSION['userId'])) {
-    $userId = $_SESSION['userId'];
-} else {
-    echo 'Korisnik nije prijavljen.';
-}
+
 ?>
 <head>
     <title></title>

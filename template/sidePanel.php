@@ -10,21 +10,21 @@
         <div class="panel-section">
             <h3>Topics</h3>
             <ul class="category-list">
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Science</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Bisnies</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Arts</a></li>
-                <li><a href="#">Food and Drinks</a></li>
-                <li><a href="#">Movie and TV</a></li>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Nature</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Vehicles</a></li>
-                <li><a href="#">Spooky</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Other</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('tehnology'); ?>">Technology</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('sience'); ?>">Science</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('sport'); ?>">Sport</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('bisnis'); ?>">Bisnies</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('music'); ?>">Music</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('entertaiment'); ?>">Entertainment</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('arts'); ?>">Arts</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('fasion'); ?>">Fasion</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('nature'); ?>">Nature</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('news'); ?>">News</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('vihicle'); ?>">Vehicles</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('tehnology'); ?>">Vehicles</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('tehnology'); ?>">Spooky</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('tehnology'); ?>">Books</a></li>
+                <li><a href="../public/index.php?content=category&category=<?= urlencode('tehnology'); ?>">Other</a></li>
             </ul>
         </div>
 
@@ -53,9 +53,8 @@
             <div class="panel-section">
                 <h3>-------</h3>
                 <ul class="popular-list">
-                    <li><a href="../public/index.php?content=account">Account</a></li>
+                    <li><a href="../public/index.php?content=about">About</a></li>
                     <li><a href="../public/index.php?content=help">Help</a></li>
-                    <li><a href="../public/index.php?content=contact">Setings</a></li>
                 </ul>
                 <?php
                 }

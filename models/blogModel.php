@@ -19,11 +19,11 @@ function addComment($pdo, $postId, $author, $body) {
     }
 }
 
-function newPost($pdo, $title, $body, $author) {
-    $sql = "INSERT INTO post (name, body, autor) VALUES (?, ?, ?)";
+function newPost($pdo, $title, $body, $author, $category) {
+    $sql = "INSERT INTO post (name, body, autor, category) VALUES (?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
 
-    if ($stmt->execute([$title, $body, $author])) {
+    if ($stmt->execute([$title, $body, $author, $category])) {
         echo "Post uspešno dodat!";
     } else {
         echo "Greška pri dodavanju posta.";
@@ -123,4 +123,11 @@ function searchPosts($pdo, $searchTerm) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['term' => '%' . $searchTerm . '%']);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getPostByCategory($pdo, $category) {
+    $sql = "SELECT * FROM post WHERE category = :category";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['category' => $category]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }

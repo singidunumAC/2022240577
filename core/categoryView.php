@@ -11,6 +11,5 @@ if (!empty($_GET['search'])) {
 }
 
 foreach ($posts as $post) {
-    require 'card.php';
+    require '../template/card.php';
 }
-

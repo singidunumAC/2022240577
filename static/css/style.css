@@ -286,7 +286,8 @@ form .login {
     gap: 10px;
 }
 
-.autor {
+
+.autorT {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,8 +298,14 @@ form .login {
     border: 2px solid var(--pr-color);
     border-radius: 10px;
     cursor: pointer;
+
 }
 
+.autorT a {
+    color: var(--text-color);
+    text-decoration: none;
+
+}
 .coments {
     display: flex;
     justify-content: center;
@@ -468,4 +475,12 @@ form .login {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.catList {
+    width: 200px;
+    height: 40px;
+    color: var(--text-color);
+    background-color: var(--background);
+    border: 2px solid var(--se-color);
+    border-radius: 5px;
 }
