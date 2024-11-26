@@ -117,3 +117,10 @@ function getCommentsForUser($pdo, $author) {
     $stmt->execute(['autor' => $author]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function searchPosts($pdo, $searchTerm) {
+    $sql = "SELECT * FROM post WHERE name LIKE :term OR body LIKE :term";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['term' => '%' . $searchTerm . '%']);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

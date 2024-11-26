@@ -54,8 +54,18 @@ function addUser($pdo, $input, $password1 , $password2) {
         echo 'user postoji u bazu';
     }
 
-
-
 }
 
-
+function changePassword($pdo, $userId, $oldPass ,$password1, $password2) {
+    if ($password1 === $password2) {
+        $pass = $password1;
+        $result = changePasswordM($pdo, $userId, $oldPass, $pass);
+        if ($result === true) {
+            return "Šifra je uspešno promenjena.";
+        } else {
+            return "Greška pri promeni šifre. Proverite trenutnu šifru.";
+        }
+    } else {
+        return "Nove šifre se ne poklapaju.";
+    }
+}

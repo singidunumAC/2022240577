@@ -87,3 +87,23 @@ function userinfo($pdo, $input) {
         return null;
     }
 }
+
+function changePasswordM($pdo, $userId, $password, $password2)
+{
+    $pass = findUserPassword($pdo, $userId);
+    if ($pass) {
+        if (password_verify($password, $pass)) {
+            $hashedPassword = password_hash($password2, PASSWORD_DEFAULT);
+            $sql = "UPDATE users SET password = :newPassword WHERE id = :userId";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'newPassword' => $hashedPassword,
+                'userId' => $userId
+            ]);
+
+            return true;
+        }
+
+        return false;
+    }
+}

@@ -6,18 +6,27 @@ require '../models/blogModel.php';
 session_start();
 if (isset($_SESSION['userId'])) {
     $userId = $_SESSION['userId'];
-    $name = userinfo($pdo, $userId);
+    $userInfo = userinfo($pdo, $userId); // Poziv funkcije samo jednom
 
+    if ($userInfo === null) { // Provera da li je rezultat null
+        $name = 'nobody';
+    } else {
+        $name = $userInfo;
+    }
 }
 ?>
 <div class="settings-container">
     <h2>Settings</h2>
-    <p>
+    <p class="accInfo">
         Id : <?= htmlspecialchars($userId); ?>
     </p>
-    <p>
+    <p class="accInfo">
         Name : <?= htmlspecialchars($name); ?>
     </p>
+
+    <a href="../core/changePassword.php"  class="changePass">
+        change password
+    </a>
 </div>
 
 <h2> My posts </h2>

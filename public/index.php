@@ -46,7 +46,9 @@ session_start();
                 default:
                     echo 'Stranica nije pronađena.';
             }
-        }else {
+        } elseif (isset($_GET['search'])) { // Ako postoji parametar za pretragu
+            require '../template/contentMain.php';
+        } else {
             require '../template/contentMain.php';
         }
         ?>
