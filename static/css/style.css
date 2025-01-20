@@ -484,3 +484,8 @@ form .login {
     border: 2px solid var(--se-color);
     border-radius: 5px;
 }
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}

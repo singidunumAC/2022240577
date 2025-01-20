@@ -107,3 +107,17 @@ function changePasswordM($pdo, $userId, $password, $password2)
         return false;
     }
 }
+
+function useradmin($pdo, $input) {
+    $sql = "SELECT admin FROM users WHERE id = (?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$input]);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        return $user['admin'];
+    } else {
+        return null;
+    }
+}

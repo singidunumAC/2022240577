@@ -69,3 +69,4 @@ function changePassword($pdo, $userId, $oldPass ,$password1, $password2) {
         return "Nove šifre se ne poklapaju.";
     }
 }
+
